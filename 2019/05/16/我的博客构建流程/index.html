@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="Zjde_VkIfI3a5F6uIV3FPY72zz8jznBal7QvC_LwUPo">
+    <meta name="baidu-site-verification" content="beTlsVyIJB">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anu的个人博客">
+    <meta name="keyword" content="程序">
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        我的博客构建流程 - Anu的太空舱 | Anu&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+         var hm = document.createElement("script");
+         hm.src = "https://hm.baidu.com/hm.js?741ed2630f83326f1c37c45849fb04f3";
+         var s = document.getElementsByTagName("script")[0]; 
+         s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> このANUだ！！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>Anu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客构建流程"><span class="toc-text">博客构建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、Github"><span class="toc-text">一、Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Hexo"><span class="toc-text">二、Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、Theme-AirCloud的配置"><span class="toc-text">三、Theme-AirCloud的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Hexo-Admin"><span class="toc-text">3.1 Hexo Admin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-百度统计"><span class="toc-text">3.2 百度统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-Google-Search"><span class="toc-text">3.3 Google Search</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-1-注册登录Google"><span class="toc-text">3.3.1 注册登录Google</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-2-验证网站所有权"><span class="toc-text">3.3.2 验证网站所有权</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-3-添加站点地图"><span class="toc-text">3.3.3 添加站点地图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-等待，并心怀希望吧。"><span class="toc-text">3.3.4 等待，并心怀希望吧。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-其他"><span class="toc-text">3.4 其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> このANUだ！！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        我的博客构建流程
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-05-16 22:38:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Github" title="Github">Github</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#博客构建" title="博客构建">博客构建</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&#8195;&#8195;“Anu的博客”到目前为止，构建已经差不多结束了（撒花）！搜索、评论、统计，基本功能几乎都有了，接下来就是更新博客了！</p>
+<p>&#8195;&#8195;这一篇打算讲讲我构建这样一个博客的大概流程，讲讲帮助我构建这个博客的各个工具和文章，不会太详细，大概就列举一下博客含有的功能与其构架方法。</p>
+<h2 id="博客构建流程"><a href="#博客构建流程" class="headerlink" title="博客构建流程"></a>博客构建流程</h2><h3 id="一、Github"><a href="#一、Github" class="headerlink" title="一、Github"></a>一、Github</h3><p>&#8195;&#8195;我用了一下午了解了Github的相关知识，其中对我比较有帮助的有:</p>
+<ul>
+<li><a href="https://www.runoob.com/git/git-tutorial.html" target="_blank" rel="noopener">菜鸟教程-Git教程</a></li>
+<li><a href="https://baike.baidu.com/item/GIT/12647237?fr=aladdin" target="_blank" rel="noopener">Git-百度百科</a></li>
+<li><a href="https://baike.baidu.com/item/GitHub" target="_blank" rel="noopener">Github-百度百科</a></li>
+</ul>
+<p>&#8195;&#8195;看完这些，对Github及其使用就有一个基本的了解了。当然，最重要还是去Github上自己建一个测试用仓库尝试一下各种操作（建议找一个小伙伴一起测试分支与合并功能！）。</p>
+<p>&#8195;&#8195;了解完Github后，我在Github上闲逛时意外发现了朋友的github.io博客，当机立断决定也做一个github.io博客<del>来玩</del>。</p>
+<h3 id="二、Hexo"><a href="#二、Hexo" class="headerlink" title="二、Hexo"></a>二、Hexo</h3><p>&#8195;&#8195;构建过程我参考了：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/jackyroc/p/7681938.html" target="_blank" rel="noopener">我是如何利用Github Pages搭建起我的博客，细数一路的坑</a></li>
+</ul>
+<p>&#8195;&#8195;这位博主写的很详细，让我少走不少弯路。我与他选择了不同的主题，之后的配置也不同。</p>
+<h3 id="三、Theme-AirCloud的配置"><a href="#三、Theme-AirCloud的配置" class="headerlink" title="三、Theme-AirCloud的配置"></a>三、Theme-AirCloud的配置</h3><p>&#8195;&#8195;我使用的Hexo是<a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>,作者大大在Github上写了很详细的初始化配置过程（万分感谢！）。配置过程并不是很困难，对与新手来说也很友好。在熟悉后我甚至尝试去改变了主题布局，对一个准程序员来说摸索一下并不是很困难。</p>
+<p>&#8195;&#8195;在这个主题的基础上，我添加了一些功能，便于博客的使用。</p>
+<h4 id="3-1-Hexo-Admin"><a href="#3-1-Hexo-Admin" class="headerlink" title="3.1 Hexo Admin"></a>3.1 Hexo Admin</h4><p>&#8195;&#8195;为了更便捷的发布博客，我找到了Hexo Admin这个方法。Hexo Admin是一个Hexo博客的可视化管理界面，比起直接修改文件，这个方法要便捷许多（但有时不得不修改源文件…）。</p>
+<div align="center"><br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-17HexoAdminPic.png" width="70%" alt="Admin管理界面"><br></div>
+
+<p>&#8195;&#8195;Hexo Admin的安装参考：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/68e727dda16d" target="_blank" rel="noopener">如何优雅地发布Hexo博客</a></li>
+</ul>
+<p>&#8195;&#8195;这个教程同样很详细，但其中有一个关于deployCommand文件的坑。我尝试了博主的.sh文件方式发现会出现未知异常，搜索一下发现这个是Linux系统的脚本文件，在Windows下使用有些滑稽了。解决方法就是在根目录下新建一个这样的.bat文件：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(文件名：hexo-deploy.bat)</span><br><span class="line">@echo <span class="literal">off</span></span><br><span class="line">hexo g</span><br><span class="line">close</span><br></pre></td></tr></table></figure>
+<p>&#8195;&#8195;之后将在_config.yml文件中添加的deployCommand标签属性改为(‘hexo-deploy.bat’)，即可成功使用Hexo Admin的Deploy操作。</p>
+<p>&#8195;&#8195;需要注意的是，这里虽说是Deploy方法，但我并没有在bat文件中添加”hexo d”命令，一般在修改完博客最后，再手动在Git bash中执行hexo deploy指令。当然如有需要也可以在bat中添加hexo d指令。</p>
+<h4 id="3-2-百度统计"><a href="#3-2-百度统计" class="headerlink" title="3.2 百度统计"></a>3.2 百度统计</h4><p>&#8195;&#8195;主题自带极简网页计数器<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>，位于网页最下方，但不提供更详细的报告数据。为了更好的了解本博客的概况，我使用了由百度提供的<a href="https://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a>方案。</p>
+<p>&#8195;&#8195;流程如下：</p>
+<p>1.注册、登录百度统计</p>
+<p>2.在主题的_config.yml文件中添加：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//从百度统计提供代码中的hm.src获得</span><br><span class="line">baidu_analytics: 741ed2630f83326f1c37<span class="strong">*****</span><span class="strong">*****</span></span><br></pre></td></tr></table></figure>
+<p>3.在\themes\‘主题名称’\layout_partial\head.ejs文件中添加：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//在<span class="tag">&lt;<span class="name">head</span>&gt;</span>标签内</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> _hmt = _hmt || [];</span></span><br><span class="line"><span class="actionscript">        (<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> hm = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span></span><br><span class="line"><span class="actionscript">         hm.src = <span class="string">"https://hm.baidu.com/hm.js?&lt;%= theme.baidu_analytics %&gt;"</span>;</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>]; </span></span><br><span class="line">         s.parentNode.insertBefore(hm, s);</span><br><span class="line">        &#125;)();</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>4.在百度统计页面进行安装检查</p>
+<p>5 重新部署上传，在等待一段时间后即可查看统计报告</p>
+<h4 id="3-3-Google-Search"><a href="#3-3-Google-Search" class="headerlink" title="3.3 Google Search"></a>3.3 Google Search</h4><p>&#8195;&#8195;为了使我的博客能够被谷歌搜索收录，让更多人看到，需要使用Google Search Console。</p>
+<p>&#8195;&#8195;具体流程如下(需要梯子)：</p>
+<h5 id="3-3-1-注册登录Google"><a href="#3-3-1-注册登录Google" class="headerlink" title="3.3.1 注册登录Google"></a>3.3.1 注册登录Google</h5><h5 id="3-3-2-验证网站所有权"><a href="#3-3-2-验证网站所有权" class="headerlink" title="3.3.2 验证网站所有权"></a>3.3.2 验证网站所有权</h5><p>&#8195;&#8195;资源类型我选择的是网址前缀，输入网址后点继续。</p>
+<div align="center"><br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-17GoogleSC.png" width="70%" height="70%" alt="Admin管理界面"><br></div>
+
+<p>&#8195;&#8195;Hexo建立的博客推荐使用Html标记方法进行验证，在”\themes\‘主题名称’\layout_partial\head.ejs”中<code>&lt;meta&gt;</code>标签下添加Google提供的代码，部署后在Google页面确认。</p>
+<div align="center"><br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-17GoogleSC2.png" width="70%" height="70%" alt="Admin管理界面" align="center"><br></div>
+
+<h5 id="3-3-3-添加站点地图"><a href="#3-3-3-添加站点地图" class="headerlink" title="3.3.3 添加站点地图"></a>3.3.3 添加站点地图</h5><p>&#8195;&#8195;站点地图是一个网站所有链接的容器。站点地图可以方便爬虫抓取网站页面,通过抓取网站页面。</p>
+<p>1.首先安装Hexo的站点地图插件：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>2.编辑_config.yml文件：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sitemap:</span></span><br><span class="line"><span class="symbol">    path:</span> sitemap.xml</span><br></pre></td></tr></table></figure>
+<p>3.重新生成部署：<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(素质三连！)</span><br><span class="line">hexo <span class="built_in">clean</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>&#8195;&#8195;重新部署后就能在public文件夹下看到sitemap.xml文件了。</p>
+<p>4.在谷歌站点地图页面添加站点地图：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//anuuuuuu.github.io/sitemap.xml</span></span><br></pre></td></tr></table></figure></p>
+<p>&#8195;&#8195;点击提交就能上传站点地图了。</p>
+<h5 id="3-3-4-等待，并心怀希望吧。"><a href="#3-3-4-等待，并心怀希望吧。" class="headerlink" title="3.3.4 等待，并心怀希望吧。"></a>3.3.4 等待，并心怀希望吧。</h5><p>&#8195;&#8195;一般在Google搜索资源更新后，就能在谷歌搜索到自己的博客站点了。我在5/17号凌晨递交，早上八点就在Google搜索到了我的站点。</p>
+<div align="center"><br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-17GoogleSC3.png" width="70%" height="70%" alt="Admin管理界面"><br></div>
+
+<h4 id="3-4-其他"><a href="#3-4-其他" class="headerlink" title="3.4 其他"></a>3.4 其他</h4><p>&#8195;&#8195;评论功能我使用了主题内置的Livere，可在墙内使用，在主题配置的Wiki中有写到这一部分。这个Livere有和百度统计相似的评论统计和管理界面，使用也比较方便。当然也可以自己摸索，选择自定义的评论组件。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&#8195;&#8195;这差不多就是我构建博客的全过程，如果有不明白或者错误的地方欢迎在评论里指出，我会积极修改！</p>
+<p>&#8195;&#8195;后续大概也许会写各个模块更详细的介绍，<del>咕咕咕</del>。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">打赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src data-src="/img/donate.png">
+        <p> 赏颗糖吃吧(っ´Ι`)っ！ </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/3470809044">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/Anuuuuuu">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://autokaka.github.io">Autokaka</a></span>
+        <span>/</span>
+        
+        <span><a href="https://www.simbleman.com">Haoocker</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("05/16/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "已漂流"+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+            setInterval("createtime()",250);
+        </script>
+    </p>
+        <!-- <span>
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> -->
+
+    <p> Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+        <span>
+                本舱总访问<span id="busuanzi_value_site_pv"></span>（<span id="busuanzi_value_site_uv"></span>）次
+            </span>
+    </p>
+</footer>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":true,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300,"vOffset":-75},"mobile":{"show":true},"react":{"opacity":0.5},"log":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC80NDI1MC8yMDc4Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="Zjde_VkIfI3a5F6uIV3FPY72zz8jznBal7QvC_LwUPo">
+    <meta name="baidu-site-verification" content="beTlsVyIJB">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anu的个人博客">
+    <meta name="keyword" content="程序">
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Git与Github - Anu的太空舱 | Anu&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+         var hm = document.createElement("script");
+         hm.src = "https://hm.baidu.com/hm.js?741ed2630f83326f1c37c45849fb04f3";
+         var s = document.getElementsByTagName("script")[0]; 
+         s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> このANUだ！！ </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>Anu</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github"><span class="toc-text">Github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Git是什么？Github是什么？"><span class="toc-text">1.1.Git是什么？Github是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Git的安装与教程"><span class="toc-text">1.2.Git的安装与教程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Github创建个人测试仓库"><span class="toc-text">1.3.Github创建个人测试仓库</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> このANUだ！！ </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Git与Github
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-05-17 10:57:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Github" title="Github">Github</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#博客构建" title="博客构建">博客构建</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <p>&#8195;&#8195;昨天用一下午了解了Github和Git，并在晚上尝试用Hexo构架了一个.github.io的博客。因为有直接能看得到的成果，还是很有成就感的√。</p>
+<p>&#8195;&#8195;今天就粗略讲一下Github的使用。</p>
+<blockquote>
+<p>环境:<br>&#8195;Win10 64位<br>&#8195;git version 2.21.0.windows.1<br>&#8195;hexo: 3.8.0</p>
+</blockquote>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><h3 id="1-1-Git是什么？Github是什么？"><a href="#1-1-Git是什么？Github是什么？" class="headerlink" title="1.1.Git是什么？Github是什么？"></a>1.1.Git是什么？Github是什么？</h3><p>&#8195;&#8195;在我目前的理解里（可能有误），Github就是一个使用了Git作为版本控制系统的云平台。</p>
+<p>&#8195;&#8195;首先看一下Git的工作流程。</p>
+<p>&#8195;&#8195;<a href="https://www.runoob.com/git/git-workflow.html" target="_blank" rel="noopener">Git的工作流程</a></p>
+<blockquote>
+<p>&#8195;&#8195;Git的操作流程如下：</p>
+<ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+</blockquote>
+<p>&#8195;&#8195;Git工作基本原理就是在本地选择一个文件夹作为本地仓库，将工程资源从云上拉下来到本地仓库，并在本地对工程进行修改，修改完毕后上传。</p>
+<p>&#8195;&#8195;使Git区别于其他版本控制系统的是它的分支（branch）管理，这个分支管理允许工程参与者创建不同的分支，可以理解为往不同的功能方向进行更新，就如同时间线在一个节点发生变化，或者理解为点了不同技能树分支（这样解释会不会很中二？）。Git提供了分支合并（merge）操作，可以将不同的分支整合到一起。当分支间发生冲突时，会自动整合一部分，并可由主开发者手动选择整合，很方便。</p>
+<p>&#8195;&#8195;而Github则提供了这样一个存放工程资源的云平台。</p>
+<blockquote>
+<p>&#8195;&#8195;GitHub是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。</p>
+</blockquote>
+<h3 id="1-2-Git的安装与教程"><a href="#1-2-Git的安装与教程" class="headerlink" title="1.2.Git的安装与教程"></a>1.2.Git的安装与教程</h3><p>&#8195;&#8195;Git安装的教程过多，这里不在赘述。我使用的方法是<a href="https://www.runoob.com/git/git-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a>提供的Windows操作系统安装方法。</p>
+<p>&#8195;&#8195;Git使用操作教程也可以参考<a href="https://www.runoob.com/git/git-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a>,绝对比我写的要好！一个小建议是先熟悉Git Bash后再使用各种第三方的图形化界面管理系统，这样更便于学习理解。</p>
+<h3 id="1-3-Github创建个人测试仓库"><a href="#1-3-Github创建个人测试仓库" class="headerlink" title="1.3.Github创建个人测试仓库"></a>1.3.Github创建个人测试仓库</h3><p>&#8195;&#8195;在初始化完Git后，就可以创建Github账号，并测试Git。</p>
+<p>&#8195;&#8195;你可以新建一个测试仓库（Repository）,测试各个Git操作:</p>
+<ol>
+<li>在Github上新建一个库，起名任意。<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits1.png" width="70%" height="70%" alt align="center"></li>
+<li>进入一个空文件夹，在这个文件夹中右键、选择Git Bash<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits2.png" width="70%" height="70%" alt align="center"></li>
+<li>运行git init初始化仓库<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits3.png" width="70%" height="70%" alt align="center"></li>
+</ol>
+<ul>
+<li>添加远程地址<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits4.png" width="70%" height="70%" alt align="center"><br>&#8195;&#8195;这个地址可在你创建的Github仓库上获取<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits5.png" width="70%" height="70%" alt align="center"></li>
+<li>添加一个文件并Push</li>
+</ul>
+<p>&#8195;&#8195;先在文件夹中新建一个test.txt<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits6.png" width="70%" height="70%" alt align="center"><br>&#8195;&#8195;然后在git中运行以下代码<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits7.png" width="70%" height="70%" alt align="center"><br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits8.png" width="70%" height="70%" alt align="center"><br>&#8195;&#8195;回到Github的仓库查看<br><img src="https://github.com/Anuuuuuu/BlogPictureRepo/raw/master/19-5-29gits9.png" width="70%" height="70%" alt align="center"></p>
+<p>&#8195;&#8195;我建议找一个小伙伴一起尝试一下在一个Github仓库中一同上传文件，这样你将更直观的明白Github的魅力所在。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">打赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src data-src="/img/donate.png">
+        <p> 赏颗糖吃吧(っ´Ι`)っ！ </p>
+    </div>
+</div>
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/3470809044">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank" href="https://github.com/Anuuuuuu">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://autokaka.github.io">Autokaka</a></span>
+        <span>/</span>
+        
+        <span><a href="https://www.simbleman.com">Haoocker</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("05/16/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "已漂流"+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+            setInterval("createtime()",250);
+        </script>
+    </p>
+        <!-- <span>
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> -->
+
+    <p> Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+        <span>
+                本舱总访问<span id="busuanzi_value_site_pv"></span>（<span id="busuanzi_value_site_uv"></span>）次
+            </span>
+    </p>
+</footer>
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":true,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300,"vOffset":-75},"mobile":{"show":true},"react":{"opacity":0.5},"log":false});</script></body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC80NDI1MC8yMDc4Mw==');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
